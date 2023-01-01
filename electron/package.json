@@ -1,0 +1,60 @@
+{
+    "name": "bonziworld_client",
+    "productName": "BonziWORLD Revived",
+    "version": "1.12.0",
+    "description": "Electron app for the BonziWORLD chat client.",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "echo \"No linting configured\"",
+        "build-win": "electron-builder --win",
+        "build-linux": "electron-builder --linux",
+        "build-mac": "electron-builder --mac"
+    },
+    "keywords": [],
+    "author": {
+        "name": "Cosmic",
+        "email": "bonzi.world@outlook.com"
+    },
+    "license": "MIT",
+    "build": {
+        "appId": "com.cosmic.bonziworld-revived",
+        "win": {
+            "target": ["nsis"],
+            "icon": "src/icon-win.ico"
+        },
+        "linux": {
+            "target": ["appImage"],
+            "icon": "src/icon-linux.png"
+        },
+        "nsis": {
+            "installerIcon": "src/icon-win.ico",
+            "uninstallerIcon": "src/icon-win.ico",
+            "installerSidebar": "src/sidebar.bmp",
+            "uninstallerSidebar": "src/sidebar.bmp",
+            "uninstallDisplayName": "BonziWORLD Revived",
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        },
+        "appImage": {
+            "synopsis": "",
+            "description": "",
+            "category": "Network"
+        }
+    },
+    "dependencies": {
+        "electron-squirrel-startup": "^1.0.0"
+    },
+    "devDependencies": {
+        "@electron-forge/cli": "^6.0.4",
+        "@electron-forge/maker-deb": "^6.0.4",
+        "@electron-forge/maker-rpm": "^6.0.4",
+        "@electron-forge/maker-squirrel": "^6.0.4",
+        "@electron-forge/maker-zip": "^6.0.4",
+        "electron": "22.0.0",
+        "electron-builder": "^23.6.0"
+    }
+}
